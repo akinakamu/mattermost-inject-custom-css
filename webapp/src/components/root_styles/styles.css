@@ -1,1 +1,60 @@
-/* Please add your custom CSS here. */
+Customize product-switcher-menu-dropdown
+.MenuStartTrial {
+  display: none !important;
+}
+.about-modal__content {
+  display: none !important;
+}
+.about-modal__footer > div:first-child {
+  display: none;
+}
+
+/* Disable Mattermost logo on the top left of screen */
+[class^="ProductBrandingFreeEditionContainer-"] {
+  display: none !important;
+}
+
+/* Disable UserGuideLink in the help dropdown menu. */
+#mattermostUserGuideLink {
+  display: none;
+}
+
+/* Disable onboarding */
+button[data-cy="onboarding-task-list-action-button"], div[data-cy="onboarding-task-list-overlay"], [class^="TaskItems-"].open {
+  display: none !important;
+}
+
+/* Disable Sytem Message Icon */
+svg[aria-label="TUNAGChat Logo"], svg[aria-label="TUNAGチャットロゴ"] {
+  display: none;
+}
+
+/* Disable the links that navigate to Mattermost */
+a[location="user_settings_notifications"],
+a[location="learn_about_teams"] {
+  display: none !important;
+}
+
+/* Replace the plugin description for Audio device in Calls Settings */
+[id="com.mattermost.callsSettings"] .section-min:nth-of-type(3) .section-min__describe span {
+  font-size: 0px !important;
+}
+
+[id="com.mattermost.callsSettings"] [class*="Description-"] {
+  display: none !important;
+}
+
+/* Default: Japanese (ja) */
+[id="com.mattermost.callsSettings"] .section-min:nth-of-type(3) .section-min__describe span::after,
+[id="com.mattermost.callsSettings"] .section-max:has(#Select) fieldset::after {
+  content: "通話に使用するオーディオデバイスを設定してください";
+  font-size: 14px !important;
+  display: inline-block;
+}
+/* Override: English (en) */
+[data-inject-css-locale="en"] [id="com.mattermost.callsSettings"] .section-min:nth-of-type(3) .section-min__describe span::after,
+[data-inject-css-locale="en"] [id="com.mattermost.callsSettings"] .section-max:has(#Select) fieldset::after {
+  content: "Set up audio devices to be used for calls";
+  font-size: 14px !important;
+}
+
